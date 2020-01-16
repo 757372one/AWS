@@ -15,7 +15,7 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	```
 	nano /etc/hosts
 	``` 
-  underneath the 127.0.0.1 localhost, enter the IP address of your server and you host name
+3.a underneath the 127.0.0.1 localhost, enter the IP address of your server and you host name
 	  ```
 	  127.0.0.1 localhost
 	  3.134.89.255 django-server
@@ -48,4 +48,9 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	```
 	sudo chmod 700 ~/.ssh/
 	sudo chmod 600 ~/.ssh/*
+	```
+11. block root login, change: PermitRootLogin No
+	```
+	sudo nano /etc/ssh/sshd_config
+	sudo systemctl restart sshd
 	```
