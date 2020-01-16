@@ -1,4 +1,4 @@
-# Django deployment on a linux server
+## Django deployment on a linux server
 Launch a Django Project on Amazon Web Services (AWS) EC2
 
 1. Lunch an instance to ssh into it, Im am going to use ubuntu, if you are using a different linux, map the differences
@@ -76,7 +76,7 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	sudo ufw enable
 	sudo ufw status
 	```
-# 13. Django deployment, you can simply use git clone, or scp
+## 13. Django deployment, you can simply use git clone, or scp
 create a requirements.txt file
 	```
 	source bin/activate
@@ -84,6 +84,7 @@ create a requirements.txt file
 	git clonde {git_url}
 	scp -r project_folder {user}@server_address:~/
 	```
+	
 14. create a virtual enviroment on the server
 	```
 	sudo apt-get python3-pip
@@ -92,20 +93,25 @@ create a requirements.txt file
 	source {project_folder}/venv/bin activate
 	pip install -r requirements.txt
 	```
+	
 15. Change settings on django, settings.py, ALLOW_HOSTS,
 	```
 	ALLOW_HOSTS = ['your ip address']
 	```
+	
 16. add above STATIC URL
 	```
 	STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 	```
+	
 17. run command to collect static files
 	```
 	python manage.py collectstatic
 	```
-18. test
+	
+18. Test it
 	```
 	python manage.py runserver 0.0.0.0:8000
 	```
+	
 19. If there are no errors the application should be accessible on the public ip on port 8000
