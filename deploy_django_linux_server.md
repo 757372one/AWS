@@ -113,5 +113,8 @@ create a requirements.txt file
 	```
 	python manage.py runserver 0.0.0.0:8000
 	```
+18a. open HTTP port in AWS instance menu.(all ports except ssh closed in AWS)
+Go to > EC2 > your instance > last menu item "security groups". 
+It lauch wizard, click on "Inbound" in bottom menu, then "edit", and add HTTP or any port what you want.
 	
 19. If there are no errors the application should be accessible on the public ip on port 8000
