@@ -1,4 +1,4 @@
-# Django On a linux server
+# Django deployment on a linux server
 Launch a Django Project on Amazon Web Services (AWS) EC2
 
 1. Lunch an instance to ssh into it, Im am going to use ubuntu, if you are using a different linux, map the differences
@@ -16,10 +16,10 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	nano /etc/hosts
 	``` 
   underneath the 127.0.0.1 localhost, enter the IP address of your server and you host name
-  ```
-  127.0.0.1 localhost
-  3.134.89.255 django-server
-  ```
+	  ```
+	  127.0.0.1 localhost
+	  3.134.89.255 django-server
+	  ```
 4. Set up a limited user, best not to use root.
 	```
 	adduser {your_username}
@@ -29,6 +29,23 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	adduser {your_username} sudo
 	``` 
 6. log in as the user
-```
-ssh {user}@youserveraddress.com
-```
+	```
+	ssh {user}@youserveraddress.com
+	```
+7. create a .ssh folder
+	```
+	mkdir -p ~/.ssh
+	```
+8. on your local machine, generate a two key files
+	```
+	ssh-keygen -b 4096
+	```
+9.  upload public key
+	```
+	scp ~/.ssh/{file}.pub {username}@server_ip:~/.ssh/authorized_keys
+	```
+10. update permissions
+	```
+	sudo chmod 700 ~/.ssh/
+	sudo chmod 600 ~/.ssh/*
+	```
