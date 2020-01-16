@@ -186,6 +186,7 @@ Launch a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 	eb use awsbean-dev
 	```
+**If enviroment is not showing up on your EB, check the selected region in the top right corner
 
 
 6. **Django Production `settings.py`:**
