@@ -9,7 +9,7 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 2. Set the host name of the new machine
 	```
 	hostnamectl set-hostname django-server
-  hostname
+  	hostname
 	```
 3. Set the host name in the host file
 	```
