@@ -69,8 +69,14 @@ Launch a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 	eb --version
 	```
+	if not working
+	```
+	which eb
+	export PATH=/usr/local/bin:$PATH # use path from which eb output
+	eb --version
+	```
 	
-	**Returns** something like 
+	**Returns** somethicat ng like 
 	```
 	EB CLI 3.6.1 (Python 2.7.9)
 	```
@@ -186,7 +192,7 @@ Launch a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 	eb use awsbean-dev
 	```
-**If enviroment is not showing up on your EB, check the selected region in the top right corner
+**If enviroment is not showing up on your EB, check the selected region in the top right corner**
 
 
 6. **Django Production `settings.py`:**
@@ -344,14 +350,3 @@ Launch a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 
 	`eb deploy`
 
-
-
-
-
-Subscribe on our [YouTube Channel](http://joincfe.com/youtube) and join us for more in-depth tutorials on [Django development](http://joincfe.com/enroll).
-
-
-Cheers!
-
-
-#### Organized by CodingForEntrepreneurs
