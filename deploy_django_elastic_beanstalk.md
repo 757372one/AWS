@@ -46,3 +46,15 @@ which eb
 export PATH=/usr/local/bin:$PATH # use path from which eb output
 eb --version
 
+# initialize your EB CLI repository with the eb init command. 
+eb init -p python-3.6 [your-django-name]
+
+# run eb init again to configure a default key pair 
+# so that you can use SSH to connect to the EC2 instance running your application. 
+
+
+
+
+
+
+
