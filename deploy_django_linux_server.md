@@ -63,15 +63,23 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
 	sudo systemctl restart sshd
 	```
 	
-12. Insall firewall ufw
+12. Install firewall ufw, and do a basic config
 	``` 
 	sudo apt-get install ufw
 	sudo ufw default allow outging
 	sudo ufw default deny incoming
 	sudo ufw allow ssh
 	sudo ufw allow 8000
+	```
+	this will allow to view our application on port 8000, after everything is production ready, allow http
+	```
 	sudo ufw enable
 	sudo ufw status
 	```
-
+# 13. Django deployment, you can simply use git clone
+	create a requirements.txt file
+	```
+	source bin/activate
+	pip freeze > requirements.txt
+	```
 	
