@@ -1,7 +1,7 @@
-# create a new virutual enviroment,  
+* create a new virutual enviroment,  
 virtualenv venv
 
-# activate the virtual enviroment
+* activate the virtual enviroment
 source venv/bin/activate
 
 # install django, packages etc
