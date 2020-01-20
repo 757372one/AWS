@@ -87,7 +87,7 @@ create a requirements.txt file
 	
 14. create a virtual enviroment on the server
 	```
-	sudo apt-get python3-pip
+	sudo apt-get install python3-pip
 	sudo apt-get install python3-venv
 	python3 -m venv {project_folder}/venv
 	source {project_folder}/venv/bin activate
