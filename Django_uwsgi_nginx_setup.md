@@ -10,12 +10,12 @@ Launch a Django Project on Amazon Web Services (AWS) EC2
   ```
   python manage.py runserver 0.0.0.0:8000
   ```
-  if it works, run using uwsgi
+4. if it works, run using uwsgi
   ```
   uwsgi --http :8000 --module {django app}.wsgi
   ```
 
-## basic nginx
+## Basic nginx
 1. Install nginx
   ```
   sudo apt-get install nginx
