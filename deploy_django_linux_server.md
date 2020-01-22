@@ -118,3 +118,39 @@ create a requirements.txt file
 	click on "Inbound" in bottom menu, then "edit", and add HTTP or any port what you want.
 	
 19. 	If there are no errors the application should be accessible on the public ip on port 8000
+
+20.	Install Apache and WSGI (Web service getway interface)
+	```
+	sudo apt-get install apache2
+	sudo apt-get install libapache2-mod-wsgi-py3
+	```
+21. 	Configure apache web server
+	```
+	cd /etc/apache2/sites-available
+	sudo cp 000-default your_project.conf
+	```
+Add:
+	```
+	Alias /static /home/ubuntu/dash/static
+	<Directory /home/ubuntu/dash/static>
+		Require all granted
+	</Directory>
+
+	Alias /media /home/ubuntu/dash/media
+        <Directory /home/ubuntu/dash/media>
+                Require all granted
+        </Directory>
+		
+	<Directory /home/ubuntu/dash/djangodash>
+		<Files wsgi.py>
+			Require all granted
+		</Files>
+	</Directory>
+	WSGIScriptAlias / /home/ubuntu/dash/djangodash/wsgi.py
+	WSGIDaemonProcess dash_app python-path=/home/ubuntu/dash python-home=/home/ubuntu/dash/venv
+	WSGIProcessGroup dash_app
+	```
+22.	Enable site via apche
+	```
+	sudo a2ensite your_project.conf
+	```
