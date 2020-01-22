@@ -150,7 +150,34 @@ Add:
 	WSGIDaemonProcess dash_app python-path=/home/ubuntu/dash python-home=/home/ubuntu/dash/venv
 	WSGIProcessGroup dash_app
 	```
-22.	Enable site via apche
+22.	Enable site via apche, and disable the default
 	```
 	sudo a2ensite your_project.conf
+	sudo a2dissite 000-default.conf
+	```
+23. 	Manage permissions
+	```
+	sudo chown :www-data ~/dash/db.sqlite3
+	sudo chmod 664 ~/dash/db.sqlite3
+	sudo chown :www-data ~/dash
+	sudo chown -R :www-data ~/dash/media
+	sudo chmod -R 775 ~/dash/media
+	```
+24.	Create a config file to store sensitive info, place your secret key
+	```
+	sudo touch /etc/config.json
+	```
+	```
+	{
+		"SECRET_KEY": "safasdfasdf",
+		"EMAIL_USER": "",
+		"EMAIL_PASS": ""
+	}
+	```
+	in settings.py
+	```
+	import json
+	with open('/etc/config.json') as config_file:
+		config = json.load(config_file)
+	SECERET_KEY = config['SECRET_KEY']
 	```
