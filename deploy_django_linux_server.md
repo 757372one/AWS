@@ -160,6 +160,7 @@ Add:
 	sudo chown :www-data ~/dash/db.sqlite3
 	sudo chmod 664 ~/dash/db.sqlite3
 	sudo chown :www-data ~/dash
+	sudo chmod 775 ~/dash/
 	sudo chown -R :www-data ~/dash/media
 	sudo chmod -R 775 ~/dash/media
 	```
@@ -181,3 +182,12 @@ Add:
 		config = json.load(config_file)
 	SECERET_KEY = config['SECRET_KEY']
 	```
+	do the same for email and set debug = False
+	
+25. 	Disallow port 8000, allow https, restart apache server
+	```
+	sudo ufw delete allow 8000
+	sudo ufw allow https/tcp
+	sudo service apache2 restart
+	```
+	
